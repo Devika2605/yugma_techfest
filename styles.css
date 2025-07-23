@@ -1677,3 +1677,53 @@ header {
   display: inline-block;
   width: 4em; /* Adjust this value to control gap size */
 }
+/* Team Section Layout Adjustments */
+.team-grid-4x {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+.team-grid-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+.team-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.execution-team {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+@media (max-width: 992px) {
+    .team-grid-4x {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .team-grid-split {
+        grid-template-columns: 1fr;
+    }
+    
+    .execution-team {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .team-grid-4x,
+    .execution-team {
+        grid-template-columns: 1fr;
+    }
+}
