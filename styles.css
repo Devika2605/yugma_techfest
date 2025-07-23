@@ -264,47 +264,6 @@ header .container {
 
 }
 
-/* Logo 1 (IEEE) - Keep original size */
-.logo-ieee {
-    height: 50px;
-    width: auto;
-    transition: transform 0.3s ease;
-}
-
-/* Logo 2 (JNNCE) - Larger size */
-.logo-jnnce {
-    height: 75px; /* 40% larger than logo 1 */
-    width: auto;
-    transition: transform 0.3s ease;
-}
-
-/* Logo 3 (NES) - Larger size */
-.logo-nes {
-    height: 70px; /* 30% larger than logo 1 */
-    width: auto;
-    transition: transform 0.3s ease;
-}
-
-/* Hover effects */
-.logo a:hover img {
-    transform: scale(1.1);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .logo {
-        gap: 20px;
-    }
-    .logo-ieee {
-        height: 40px;
-    }
-    .logo-jnnce {
-        height: 65px;
-    }
-    .logo-nes {
-        height: 50px;
-    }
-}
 .logo img {
     height: 50px;
     width: auto;
