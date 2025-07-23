@@ -330,6 +330,12 @@ header .container {
         max-width: 120px;
     }
 }
+@media (max-width: 568px) {
+    .logo {
+        grid-template-columns: 1fr;
+        max-width: 100px;
+    }
+}
 
 .desktop-nav ul {
     display: flex;
