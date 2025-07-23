@@ -253,36 +253,81 @@ header .container {
 }
 
 .logo {
-    display: flex;
-    justify-content: space-between; /* or center/space-around */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     align-items: center;
-    flex-wrap: nowrap;
-    gap: 16px;
-    max-width: 100%;
-    overflow-x: auto; /* enables scroll if screen is very small */
-    padding: 10px;
+    justify-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .logo img {
-    height: 40px;
+    height: auto;
+    max-height: 50px;
     width: auto;
     max-width: 100%;
+    transition: var(--transition);
+    object-fit: contain;
 }
 
-/* Adjustments for tablet */
+.logo:hover img:not(:hover) {
+    transform: scale(0.95);
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Tablet view - 3 logos per row */
 @media (max-width: 768px) {
+    .logo {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 300px;
+        gap: 12px;
+    }
+    
     .logo img {
-        height: 32px;
+        max-height: 40px;
+    }
+    
+    /* Hide one logo if needed (optional) */
+    .logo a:nth-child(4),
+    .logo a:nth-child(5) {
+        display: none;
     }
 }
 
-/* Adjustments for small mobile */
+/* Mobile view - 2 logos per row with better spacing */
 @media (max-width: 480px) {
     .logo {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 220px;
+        gap: 10px;
+    }
+    
+    .logo img {
+        max-height: 35px;
+    }
+    
+    /* Show all logos in 2 rows */
+    .logo a:nth-child(4),
+    .logo a:nth-child(5) {
+        display: block;
+    }
+}
+
+/* Extra small devices - single column */
+@media (max-width: 360px) {
+    .logo {
+        grid-template-columns: 1fr;
+        max-width: 120px;
         gap: 8px;
     }
+    
     .logo img {
-        height: 28px;
+        max-height: 30px;
     }
 }
 .desktop-nav ul {
