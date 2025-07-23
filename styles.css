@@ -246,10 +246,14 @@ header {
 }
 
 header .container {
-    display: flex;
-    justify-content: space-between;
+   display: grid;
+    grid-template-columns: repeat(5, 1fr);
     align-items: center;
-    height: 80px;
+    justify-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto
 }
 
 .logo {
@@ -301,7 +305,31 @@ header .container {
         height: 50px;
     }
 }
+.logo img {
+    height: 50px;
+    width: auto;
+    max-width: 100px;
+    transition: var(--transition);
+    object-fit: contain;
+}
 
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .logo {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        grid-template-columns: 1fr;
+        max-width: 120px;
+    }
+}
 
 .desktop-nav ul {
     display: flex;
