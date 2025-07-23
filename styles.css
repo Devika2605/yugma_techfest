@@ -253,81 +253,108 @@ header .container {
 }
 
 .logo {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
     align-items: center;
-    justify-items: center;
-    gap: 15px;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.logo img {
-    height: auto;
-    max-height: 50px;
+//* Updated Logo Styles for 5 Logos */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Reduced gap to fit more logos */
+    flex-wrap: wrap;
+}
+
+/* Logo 1 (IEEE) - Reduced size */
+.logo-ieee {
+    height: 30px; /* Reduced from 50px */
     width: auto;
-    max-width: 100%;
-    transition: var(--transition);
-    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-.logo:hover img:not(:hover) {
-    transform: scale(0.95);
+/* Logo 2 (JNNCE) - Reduced size */
+.logo-jnnce {
+    height: 60px; /* Reduced from 75px */
+    width: auto;
+    transition: transform 0.3s ease;
 }
 
-.logo img:hover {
+/* Logo 3 (NES) - Reduced size */
+.logo-nes {
+    height: 50px; /* Reduced from 70px */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+/* New Logo 4 */
+.logo-fourth {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+/* New Logo 5 */
+.logo-fifth {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effects */
+.logo a:hover img {
     transform: scale(1.1);
 }
 
-/* Tablet view - 3 logos per row */
-@media (max-width: 768px) {
+/* Responsive adjustments */
+@media (max-width: 992px) {
     .logo {
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 300px;
-        gap: 12px;
-    }
-    
-    .logo img {
-        max-height: 40px;
-    }
-    
-    /* Hide one logo if needed (optional) */
-    .logo a:nth-child(4),
-    .logo a:nth-child(5) {
-        display: none;
-    }
-}
-
-/* Mobile view - 2 logos per row with better spacing */
-@media (max-width: 480px) {
-    .logo {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 220px;
-        gap: 10px;
-    }
-    
-    .logo img {
-        max-height: 35px;
-    }
-    
-    /* Show all logos in 2 rows */
-    .logo a:nth-child(4),
-    .logo a:nth-child(5) {
-        display: block;
-    }
-}
-
-/* Extra small devices - single column */
-@media (max-width: 360px) {
-    .logo {
-        grid-template-columns: 1fr;
-        max-width: 120px;
         gap: 8px;
     }
-    
-    .logo img {
-        max-height: 30px;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        gap: 8px;
+    }
+    .logo-ieee {
+        height: 25px;
+    }
+    .logo-jnnce {
+        height: 45px;
+    }
+    .logo-nes {
+        height: 40px;
+    }
+    .logo-fourth {
+        height: 25px;
+    }
+    .logo-fifth {
+        height: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        gap: 8px;
+    }
+    .logo-ieee {
+        height: 25px;
+    }
+    .logo-jnnce {
+        height: 38px;
+    }
+    .logo-nes {
+        height: 35px;
+    }
+    .logo-fourth {
+        height: 30px;
+    }
+    .logo-fifth {
+        height: 32px;
     }
 }
 .desktop-nav ul {
@@ -336,7 +363,7 @@ header .container {
 }
 
 .desktop-nav ul li {
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .desktop-nav ul li a {
@@ -381,8 +408,8 @@ header .container {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 300px;
-    height: 100vh;
+    width: 200px;
+    height: 80vh;
     background-color: var(--white);
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     z-index: 1001;
@@ -412,6 +439,7 @@ header .container {
 
 .mobile-nav ul li {
     margin-bottom: 20px;
+    margin-left: 1px;
 }
 
 .mobile-nav ul li a {
