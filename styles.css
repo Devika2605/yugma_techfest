@@ -316,24 +316,27 @@ header .container {
 .logo:hover img {
     transform: scale(1.05);
 }
-
 @media (max-width: 768px) {
     .logo {
         grid-template-columns: repeat(2, 1fr);
-        max-width: 300px;
+        max-width: 200px;
+        gap: 10px;
+    }
+    .logo img {
+        height: 36px;
+        max-width: 60px;
     }
 }
 
 @media (max-width: 480px) {
     .logo {
         grid-template-columns: 1fr;
-        max-width: 120px;
-    }
-}
-@media (max-width: 568px) {
-    .logo {
-        grid-template-columns: 1fr;
-        max-width: 100px;
+        max-width: 80px;
+        gap: 6px;
+    }
+    .logo img {
+        height: 28px;
+        max-width: 48px;
     }
 }
 
