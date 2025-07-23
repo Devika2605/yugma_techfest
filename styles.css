@@ -377,6 +377,42 @@ header .container {
     .logo { gap: 6px; }
   }
 }
+/* Medium screens (e.g., Samsung A series, Pixel) */
+@media (max-width: 480px) {
+  .logo {
+    gap: 8px;
+  }
+  .logo-ieee { height: 30px; }
+  .logo-jnnce { height: 45px; }
+  .logo-nes { height: 40px; }
+  .logo-fourth { height: 36px; }
+  .logo-fifth { height: 34px; }
+}
+
+/* Small screens (e.g., budget Androids < 400px) */
+@media (max-width: 400px) {
+  .logo {
+    gap: 6px;
+    padding: 5px 8px;
+  }
+  .logo-ieee { height: 28px; }
+  .logo-jnnce { height: 42px; }
+  .logo-nes { height: 38px; }
+  .logo-fourth { height: 34px; }
+  .logo-fifth { height: 32px; }
+}
+
+/* Extra-small screens (e.g., Galaxy Fold) */
+@media (max-width: 350px) {
+  .logo {
+    gap: 5px;
+  }
+  .logo-ieee { height: 26px; }
+  .logo-jnnce { height: 38px; }
+  .logo-nes { height: 35px; }
+  .logo-fourth { height: 32px; }
+  .logo-fifth { height: 30px; }
+}
 .desktop-nav ul {
     display: flex;
     list-style: none;
