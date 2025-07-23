@@ -1677,6 +1677,7 @@ header {
   display: inline-block;
   width: 4em; /* Adjust this value to control gap size */
 }
+
 /* Team Section Layout Adjustments */
 .team-grid-4x {
     display: grid;
@@ -1725,5 +1726,89 @@ header {
     .team-grid-4x,
     .execution-team {
         grid-template-columns: 1fr;
+    }
+}
+/* Custom Team Row Layout */
+.team-special-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+}
+
+.team-group-title {
+    position: absolute;
+    top: -40px;
+    font-weight: 600;
+    color: white;
+    background: rgba(0,0,0,0.3);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+/* Student Coordinators Group (4 cards) */
+.team-coordinators {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    padding-top: 30px;
+}
+
+.team-coordinators .team-group-title {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Execution Team Group (3 cards) */
+.team-execution {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    padding-top: 30px;
+}
+
+.team-execution .team-group-title {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Divider between groups */
+.team-divider {
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.5), transparent);
+    margin: 0 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .team-special-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .team-divider {
+        width: 80%;
+        height: 2px;
+        margin: 20px 0;
+        background: linear-gradient(to right, transparent, rgba(255,255,255,0.5), transparent);
+    }
+    
+    .team-coordinators, .team-execution {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-member {
+        min-width: 150px;
+    }
+    
+    .team-group-title {
+        font-size: 0.9rem;
     }
 }
