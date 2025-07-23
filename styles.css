@@ -1673,3 +1673,7 @@ header {
   max-height: 200px;
   padding-top: 5px;
 }
+.title-gap {
+  display: inline-block;
+  width: 4em; /* Adjust this value to control gap size */
+}
