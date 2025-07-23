@@ -357,6 +357,26 @@ header .container {
         height: 32px;
     }
 }
+@media (max-width: 428px) { /* Covers all modern iPhones */
+  .logo {
+    gap: 8px;                 /* Reduced gap for tight spacing */
+    flex-wrap: nowrap;        /* Force single row */
+    overflow-x: auto;         /* Allow horizontal scrolling if needed */
+    padding: 0 10px;          /* Add padding to prevent edge-cutting */
+    justify-content: flex-start; /* Align left to avoid overflow */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+
+  /* Slightly shrink logos on smallest iPhones (e.g., SE) */
+  @media (max-width: 375px) {
+    .logo-ieee { height: 28px; }
+    .logo-jnnce { height: 42px; }
+    .logo-nes { height: 38px; }
+    .logo-fourth { height: 34px; }
+    .logo-fifth { height: 32px; }
+    .logo { gap: 6px; }
+  }
+}
 .desktop-nav ul {
     display: flex;
     list-style: none;
