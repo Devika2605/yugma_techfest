@@ -246,22 +246,22 @@ header {
 }
 
 header .container {
-   display: grid;
+   display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+     display: grid;
     grid-template-columns: repeat(5, 1fr);
     align-items: center;
     justify-items: center;
     gap: 20px;
     width: 100%;
     max-width: 600px;
-    margin: 0 auto
-}
+    margin: 0 auto;
 
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
 }
 
 /* Logo 1 (IEEE) - Keep original size */
