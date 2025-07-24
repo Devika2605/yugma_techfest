@@ -235,7 +235,7 @@ section {
 
 /* Header Styles */
 header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
@@ -246,7 +246,7 @@ header {
 }
 
 header .container {
-   display: flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
