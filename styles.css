@@ -253,168 +253,86 @@ header .container {
 }
 
 
-/* For Android/iPhones - Prevent logo overflow */
+/* ===== LOGO ROW ===== */
 .logo {
   display: flex;
-  gap: 8px;                   /* Reduce gap to fit more logos */
-  flex-wrap: nowrap;          /* Prevent wrapping to new line */
-  overflow: hidden;           /* Hide overflow instead of scrolling */
-  justify-content: center;    /* Center logos if space allows */
-  padding: 0 10px;            /* Add padding to avoid edge-cutting */
+  align-items: center;
+  gap: 10px; /* Balanced spacing */
+  flex-wrap: nowrap; /* Force single line */
+  overflow: hidden; /* Hide overflow instead of scrolling */
+  padding: 5px 0; /* Vertical padding */
+  justify-content: center; /* Center logos */
 }
 
-/* Shrink logos further for small screens */
-@media (max-width: 428px) {
-  .logo-ieee { height: 28px; }
-  .logo-jnnce { height: 40px; }
-  .logo-nes { height: 36px; }
-  .logo-fourth { height: 32px; }
-  .logo-fifth { height: 30px; }
-}
-
-/* Logo 1 (IEEE) - Reduced size */
+/* Individual logo sizes (maintain aspect ratio) */
 .logo-ieee {
-    height: 30px; /* Reduced from 50px */
-    width: auto;
-    transition: transform 0.3s ease;
+  height: 34px; /* IEEE - smallest */
+  width: auto;
+  transition: transform 0.3s ease;
 }
-
-/* Logo 2 (JNNCE) - Reduced size */
 .logo-jnnce {
-    height: 60px; /* Reduced from 75px */
-    width: auto;
-    transition: transform 0.3s ease;
+  height: 50px; /* JNNCE - largest */
+  width: auto;
+  transition: transform 0.3s ease;
 }
-
-/* Logo 3 (NES) - Reduced size */
 .logo-nes {
-    height: 50px; /* Reduced from 70px */
-    width: auto;
-    transition: transform 0.3s ease;
+  height: 44px; /* NES */
+  width: auto;
+  transition: transform 0.3s ease;
 }
-
-/* New Logo 4 */
 .logo-fourth {
-    height: 40px;
-    width: auto;
-    transition: transform 0.3s ease;
+  height: 40px; /* Additional logo */
+  width: auto;
+  transition: transform 0.3s ease;
 }
-
-/* New Logo 5 */
 .logo-fifth {
-    height: 40px;
-    width: auto;
-    transition: transform 0.3s ease;
+  height: 38px; /* Additional logo */
+  width: auto;
+  transition: transform 0.3s ease;
 }
 
-/* Hover effects */
-.logo a:hover img {
+/* Hover effects (desktop only) */
+@media (hover: hover) {
+  .logo a:hover img {
     transform: scale(1.1);
+  }
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    .logo {
-        gap: 8px;
-    }
-}
-
-@media (max-width: 768px) {
-    .logo {
-        gap: 8px;
-    }
-    .logo-ieee {
-        height: 25px;
-    }
-    .logo-jnnce {
-        height: 45px;
-    }
-    .logo-nes {
-        height: 40px;
-    }
-    .logo-fourth {
-        height: 25px;
-    }
-    .logo-fifth {
-        height: 20px;
-    }
-}
-
-@media (max-width: 576px) {
-    .logo {
-        gap: 8px;
-    }
-    .logo-ieee {
-        height: 25px;
-    }
-    .logo-jnnce {
-        height: 38px;
-    }
-    .logo-nes {
-        height: 35px;
-    }
-    .logo-fourth {
-        height: 30px;
-    }
-    .logo-fifth {
-        height: 32px;
-    }
-}
-@media (max-width: 428px) { /* Covers all modern iPhones */
+/* ===== MOBILE RESPONSIVENESS ===== */
+/* Phones < 428px (iPhone/Android) */
+@media (max-width: 428px) {
   .logo {
-    gap: 8px;                 /* Reduced gap for tight spacing */
-    flex-wrap: nowrap;        /* Force single row */
-    overflow-x: auto;         /* Allow horizontal scrolling if needed */
-    padding: 0 10px;          /* Add padding to prevent edge-cutting */
-    justify-content: flex-start; /* Align left to avoid overflow */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    gap: 6px; /* Tighter spacing */
+    padding: 0 8px; /* Prevent edge-cutting */
   }
-
-  /* Slightly shrink logos on smallest iPhones (e.g., SE) */
-  @media (max-width: 375px) {
-    .logo-ieee { height: 28px; }
-    .logo-jnnce { height: 42px; }
-    .logo-nes { height: 38px; }
-    .logo-fourth { height: 34px; }
-    .logo-fifth { height: 32px; }
-    .logo { gap: 6px; }
-  }
-}
-/* Medium screens (e.g., Samsung A series, Pixel) */
-@media (max-width: 480px) {
-  .logo {
-    gap: 8px;
-  }
-  .logo-ieee { height: 30px; }
-  .logo-jnnce { height: 45px; }
-  .logo-nes { height: 40px; }
-  .logo-fourth { height: 36px; }
-  .logo-fifth { height: 34px; }
-}
-
-/* Small screens (e.g., budget Androids < 400px) */
-@media (max-width: 400px) {
-  .logo {
-    gap: 6px;
-    padding: 5px 8px;
-  }
+  /* Scale down logos proportionally */
   .logo-ieee { height: 28px; }
   .logo-jnnce { height: 42px; }
-  .logo-nes { height: 38px; }
+  .logo-nes { height: 36px; }
   .logo-fourth { height: 34px; }
   .logo-fifth { height: 32px; }
 }
 
-/* Extra-small screens (e.g., Galaxy Fold) */
+/* Small phones (e.g. Galaxy Fold) */
 @media (max-width: 350px) {
   .logo {
-    gap: 5px;
+    gap: 4px;
   }
-  .logo-ieee { height: 26px; }
+  /* Minimum usable sizes */
+  .logo-ieee { height: 24px; }
   .logo-jnnce { height: 38px; }
-  .logo-nes { height: 35px; }
-  .logo-fourth { height: 32px; }
-  .logo-fifth { height: 30px; }
+  .logo-nes { height: 32px; }
+  .logo-fourth { height: 30px; }
+  .logo-fifth { height: 28px; }
+}
+
+/* ===== SAFETY CHECKS ===== */
+/* Ensure images never stretch */
+.logo img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain; /* Maintain aspect ratio */
+  display: block; /* Remove inline spacing */
 }
 .desktop-nav ul {
     display: flex;
