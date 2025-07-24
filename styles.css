@@ -1965,3 +1965,8 @@ html, body {
   margin: 0;
   padding: 0;
 }
+.title-gap {
+  display: inline-block;
+  width: 10ch; /* 5 tabs (2ch per tab standard) */
+  white-space: pre; /* Preserves spacing */
+}
