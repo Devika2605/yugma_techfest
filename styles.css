@@ -506,7 +506,7 @@ header .container {
 
 .mobile-nav.active {
     right: 0;
-    margin-right: -100px;
+    m
 }
 
 .mobile-nav-close {
@@ -515,25 +515,25 @@ header .container {
     font-size: 1.5rem;
     cursor: pointer;
     transition: var(--transition);
-    margin-right: -100px;
+    
 }
 
 .mobile-nav-close:hover {
     color: var(--primary-color);
-    margin-right: -100px;
+    
 }
 
 .mobile-nav ul {
     list-style: none;
     padding: 0 30px;
-    margin-right: -100px;
+    
 
 }
 
 .mobile-nav ul li {
     margin-bottom: 20px;
     margin-left: 1px;
-    margin-right: -100px;
+    
 }
 
 .mobile-nav ul li a {
@@ -544,13 +544,13 @@ header .container {
     display: block;
     padding: 10px 0;
     border-bottom: 1px solid #eee;
-    margin-right: -100px;
+    
 }
 
 .mobile-nav ul li a:hover {
     color: var(--primary-color);
     padding-left: 10px;
-    margin-right: -100px;
+    
 }
 
 
