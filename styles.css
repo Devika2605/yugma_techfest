@@ -253,86 +253,79 @@ header .container {
 }
 
 
-/* ===== LOGO ROW ===== */
+/* ===== LOGO CONTAINER ===== */
 .logo {
   display: flex;
-  align-items: center;
-  gap: 10px; /* Balanced spacing */
+  align-items: center; /* Vertical alignment */
+  justify-content: center; /* Horizontal center */
+  gap: 12px; /* Balanced spacing */
   flex-wrap: nowrap; /* Force single line */
-  overflow: hidden; /* Hide overflow instead of scrolling */
-  padding: 5px 0; /* Vertical padding */
-  justify-content: center; /* Center logos */
+  padding: 10px 0;
+  margin: 0 auto;
+  max-width: 100%;
+  overflow: hidden; /* Hide overflow */
 }
 
-/* Individual logo sizes (maintain aspect ratio) */
-.logo-ieee {
-  height: 34px; /* IEEE - smallest */
+/* ===== INDIVIDUAL LOGO SIZING ===== */
+/* Base sizes (desktop) */
+.logo-ieee { height: 36px; }    /* IEEE */
+.logo-jnnce { height: 52px; }   /* JNNCE (largest) */
+.logo-nes { height: 46px; }     /* NES */
+.logo-fourth { height: 42px; }  /* Partner 1 */
+.logo-fifth { height: 40px; }   /* Partner 2 */
+
+/* Logo image defaults */
+.logo img {
+  height: 100%;
   width: auto;
-  transition: transform 0.3s ease;
-}
-.logo-jnnce {
-  height: 50px; /* JNNCE - largest */
-  width: auto;
-  transition: transform 0.3s ease;
-}
-.logo-nes {
-  height: 34px; /* NES */
-  width: auto;
-  transition: transform 0.3s ease;
-}
-.logo-fourth {
-  height: 40px; /* Additional logo */
-  width: auto;
-  transition: transform 0.3s ease;
-}
-.logo-fifth {
-  height: 38px; /* Additional logo */
-  width: auto;
+  object-fit: contain;
+  display: block;
   transition: transform 0.3s ease;
 }
 
-/* Hover effects (desktop only) */
+/* Hover effect (desktop only) */
 @media (hover: hover) {
   .logo a:hover img {
     transform: scale(1.1);
   }
 }
 
-/* ===== MOBILE RESPONSIVENESS ===== */
-/* Phones < 428px (iPhone/Android) */
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .logo {
+    gap: 10px;
+  }
+  .logo-ieee { height: 32px; }
+  .logo-jnnce { height: 46px; }
+  .logo-nes { height: 40px; }
+  .logo-fourth { height: 38px; }
+  .logo-fifth { height: 36px; }
+}
+
+/* Phones (428px and below) */
 @media (max-width: 428px) {
   .logo {
-    gap: 6px; /* Tighter spacing */
-    padding: 0 8px; /* Prevent edge-cutting */
+    gap: 8px;
+    padding: 8px 5px;
   }
-  /* Scale down logos proportionally */
   .logo-ieee { height: 28px; }
-  .logo-jnnce { height: 42px; }
+  .logo-jnnce { height: 40px; }
   .logo-nes { height: 36px; }
   .logo-fourth { height: 34px; }
   .logo-fifth { height: 32px; }
 }
 
-/* Small phones (e.g. Galaxy Fold) */
+/* Small phones (350px and below) */
 @media (max-width: 350px) {
   .logo {
-    gap: 4px;
+    gap: 6px;
   }
-  /* Minimum usable sizes */
   .logo-ieee { height: 24px; }
-  .logo-jnnce { height: 38px; }
+  .logo-jnnce { height: 36px; }
   .logo-nes { height: 32px; }
   .logo-fourth { height: 30px; }
   .logo-fifth { height: 28px; }
-}
-
-/* ===== SAFETY CHECKS ===== */
-/* Ensure images never stretch */
-.logo img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain; /* Maintain aspect ratio */
-  display: block; /* Remove inline spacing */
 }
 .desktop-nav ul {
     display: flex;
