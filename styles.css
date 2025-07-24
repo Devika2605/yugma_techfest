@@ -252,21 +252,24 @@ header .container {
     height: 80px;
 }
 
+
+/* For Android/iPhones - Prevent logo overflow */
 .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 8px;                   /* Reduce gap to fit more logos */
+  flex-wrap: nowrap;          /* Prevent wrapping to new line */
+  overflow: hidden;           /* Hide overflow instead of scrolling */
+  justify-content: center;    /* Center logos if space allows */
+  padding: 0 10px;            /* Add padding to avoid edge-cutting */
 }
 
-//* Updated Logo Styles for 5 Logos */
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px; /* Reduced gap to fit more logos */
-    flex-wrap: wrap;
+/* Shrink logos further for small screens */
+@media (max-width: 428px) {
+  .logo-ieee { height: 28px; }
+  .logo-jnnce { height: 40px; }
+  .logo-nes { height: 36px; }
+  .logo-fourth { height: 32px; }
+  .logo-fifth { height: 30px; }
 }
 
 /* Logo 1 (IEEE) - Reduced size */
