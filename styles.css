@@ -427,6 +427,37 @@ header .container {
     height: 70px; /* increased size for clarity on high DPI */
   }
 }
+@media screen and (max-width: 400px) {
+  .logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .logo a {
+    flex: 0 1 28%; /* 3 logos per row roughly */
+    text-align: center;
+  }
+
+  .logo a img {
+    width: 100%;
+    max-width: 60px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .logo a:nth-child(n+4) {
+    margin-top: 0; /* Removes negative margin to avoid overlap */
+  }
+
+  .logo-jnnce {
+    height: auto; /* Let image scale naturally */
+  }
+}
+
 
 .desktop-nav ul {
     display: flex;
