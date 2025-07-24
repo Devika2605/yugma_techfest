@@ -391,6 +391,7 @@ header .container {
     height: auto;
   }
 }
+/* Laptop/Desktop - 1080p with 150% scaling (~1440px effective) */
 @media (min-width: 1024px) {
     .logo{
         height: auto;
@@ -409,24 +410,7 @@ header .container {
     height: 70px; /* increased size for clarity on high DPI */
   }
 }
-@media (min-width: 1024px) {
-    .logo{
-        height: auto;
-        width:auto;
-        max-width: -50px;
-        max-height: -100px;
-        margin-top: auto;
-        margin-left: -25px;
-    }
-  .logo-row {
-    gap: 20px;
-    padding: 60px 0;
-  }
 
-  .logo-row img {
-    height: 70px; /* increased size for clarity on high DPI */
-  }
-}
 @media screen and (max-width: 400px) {
   .logo {
     display: flex;
@@ -457,7 +441,6 @@ header .container {
     height: auto; /* Let image scale naturally */
   }
 }
-
 
 .desktop-nav ul {
     display: flex;
