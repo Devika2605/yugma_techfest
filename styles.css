@@ -276,7 +276,7 @@ header .container {
 
 /* Logo image defaults */
 .logo img {
-  height: 100%;
+  height: 50%;
   width: auto;
   object-fit: contain;
   display: block;
@@ -286,7 +286,7 @@ header .container {
 /* Hover effect (desktop only) */
 @media (hover: hover) {
   .logo a:hover img {
-    transform: scale(1.1);
+    transform: scale(0.9);
   }
 }
 
