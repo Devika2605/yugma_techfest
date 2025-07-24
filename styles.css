@@ -273,7 +273,7 @@ header .container {
     height: auto;
     max-height: 30px;             /* Force size equality */
   width: auto;
-  max-width: auto;
+  max-width: 150px;
   object-fit: contain;
 }
 /* Logo 1 (IEEE) - Reduced size */
@@ -1759,11 +1759,6 @@ header {
   max-height: 200px;
   padding-top: 5px;
 }
-.title-gap {
-  display: inline-block;
-  width: 4em; /* Adjust this value to control gap size */
-}
-
 /* Team Section Layout Adjustments */
 .team-grid-4x {
     display: grid;
