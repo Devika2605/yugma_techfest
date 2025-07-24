@@ -253,79 +253,168 @@ header .container {
 }
 
 
-/* ===== LOGO CONTAINER ===== */
+/* For Android/iPhones - Prevent logo overflow */
 .logo {
   display: flex;
-  align-items: center; /* Vertical alignment */
-  justify-content: center; /* Horizontal center */
-  gap: 12px; /* Balanced spacing */
-  flex-wrap: nowrap; /* Force single line */
-  padding: 10px 0;
-  margin: 0 auto;
-  max-width: 100%;
-  overflow: hidden; /* Hide overflow */
+  gap: 8px;                   /* Reduce gap to fit more logos */
+  flex-wrap: nowrap;          /* Prevent wrapping to new line */
+  overflow: hidden;           /* Hide overflow instead of scrolling */
+  justify-content: center;    /* Center logos if space allows */
+  padding: 0 10px;            /* Add padding to avoid edge-cutting */
 }
 
-/* ===== INDIVIDUAL LOGO SIZING ===== */
-/* Base sizes (desktop) */
-.logo-ieee { height: 36px; }    /* IEEE */
-.logo-jnnce { height: 52px; }   /* JNNCE (largest) */
-.logo-nes { height: 46px; }     /* NES */
-.logo-fourth { height: 42px; }  /* Partner 1 */
-.logo-fifth { height: 40px; }   /* Partner 2 */
-
-/* Logo image defaults */
-.logo img {
-  height: 50%;
-  width: auto;
-  object-fit: contain;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-/* Hover effect (desktop only) */
-@media (hover: hover) {
-  .logo a:hover img {
-    transform: scale(0.9);
-  }
-}
-
-/* ===== RESPONSIVE ADJUSTMENTS ===== */
-/* Tablets (768px and below) */
-@media (max-width: 768px) {
-  .logo {
-    gap: 10px;
-  }
-  .logo-ieee { height: 32px; }
-  .logo-jnnce { height: 46px; }
-  .logo-nes { height: 40px; }
-  .logo-fourth { height: 38px; }
-  .logo-fifth { height: 36px; }
-}
-
-/* Phones (428px and below) */
+/* Shrink logos further for small screens */
 @media (max-width: 428px) {
-  .logo {
-    gap: 8px;
-    padding: 8px 5px;
-  }
   .logo-ieee { height: 28px; }
   .logo-jnnce { height: 40px; }
   .logo-nes { height: 36px; }
+  .logo-fourth { height: 32px; }
+  .logo-fifth { height: 30px; }
+}
+
+/* Logo 1 (IEEE) - Reduced size */
+.logo-ieee {
+    height: 30px; /* Reduced from 50px */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Logo 2 (JNNCE) - Reduced size */
+.logo-jnnce {
+    height: 60px; /* Reduced from 75px */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Logo 3 (NES) - Reduced size */
+.logo-nes {
+    height: 50px; /* Reduced from 70px */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+/* New Logo 4 */
+.logo-fourth {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+/* New Logo 5 */
+.logo-fifth {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effects */
+.logo a:hover img {
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .logo {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        gap: 8px;
+    }
+    .logo-ieee {
+        height: 25px;
+    }
+    .logo-jnnce {
+        height: 45px;
+    }
+    .logo-nes {
+        height: 40px;
+    }
+    .logo-fourth {
+        height: 25px;
+    }
+    .logo-fifth {
+        height: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        gap: 8px;
+    }
+    .logo-ieee {
+        height: 25px;
+    }
+    .logo-jnnce {
+        height: 38px;
+    }
+    .logo-nes {
+        height: 35px;
+    }
+    .logo-fourth {
+        height: 30px;
+    }
+    .logo-fifth {
+        height: 32px;
+    }
+}
+@media (max-width: 428px) { /* Covers all modern iPhones */
+  .logo {
+    gap: 8px;                 /* Reduced gap for tight spacing */
+    flex-wrap: nowrap;        /* Force single row */
+    overflow-x: auto;         /* Allow horizontal scrolling if needed */
+    padding: 0 10px;          /* Add padding to prevent edge-cutting */
+    justify-content: flex-start; /* Align left to avoid overflow */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+
+  /* Slightly shrink logos on smallest iPhones (e.g., SE) */
+  @media (max-width: 375px) {
+    .logo-ieee { height: 28px; }
+    .logo-jnnce { height: 42px; }
+    .logo-nes { height: 38px; }
+    .logo-fourth { height: 34px; }
+    .logo-fifth { height: 32px; }
+    .logo { gap: 6px; }
+  }
+}
+/* Medium screens (e.g., Samsung A series, Pixel) */
+@media (max-width: 480px) {
+  .logo {
+    gap: 8px;
+  }
+  .logo-ieee { height: 30px; }
+  .logo-jnnce { height: 45px; }
+  .logo-nes { height: 40px; }
+  .logo-fourth { height: 36px; }
+  .logo-fifth { height: 34px; }
+}
+
+/* Small screens (e.g., budget Androids < 400px) */
+@media (max-width: 400px) {
+  .logo {
+    gap: 6px;
+    padding: 5px 8px;
+  }
+  .logo-ieee { height: 28px; }
+  .logo-jnnce { height: 42px; }
+  .logo-nes { height: 38px; }
   .logo-fourth { height: 34px; }
   .logo-fifth { height: 32px; }
 }
 
-/* Small phones (350px and below) */
+/* Extra-small screens (e.g., Galaxy Fold) */
 @media (max-width: 350px) {
   .logo {
-    gap: 6px;
+    gap: 5px;
   }
-  .logo-ieee { height: 24px; }
-  .logo-jnnce { height: 36px; }
-  .logo-nes { height: 32px; }
-  .logo-fourth { height: 30px; }
-  .logo-fifth { height: 28px; }
+  .logo-ieee { height: 26px; }
+  .logo-jnnce { height: 38px; }
+  .logo-nes { height: 35px; }
+  .logo-fourth { height: 32px; }
+  .logo-fifth { height: 30px; }
 }
 .desktop-nav ul {
     display: flex;
@@ -426,7 +515,6 @@ header .container {
     color: var(--primary-color);
     padding-left: 10px;
 }
-
 /* Hero Section */
 .hero {
     background: transparent;
