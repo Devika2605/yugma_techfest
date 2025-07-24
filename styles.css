@@ -276,7 +276,7 @@ header .container {
   transition: transform 0.3s ease;
 }
 .logo-nes {
-  height: 44px; /* NES */
+  height: 34px; /* NES */
   width: auto;
   transition: transform 0.3s ease;
 }
