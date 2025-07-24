@@ -273,7 +273,7 @@ header .container {
     height: auto;
     max-height: 30px;             /* Force size equality */
   width: auto;
-  max-width: 150px;
+  max-width: auto;
   object-fit: contain;
 }
 /* Logo 1 (IEEE) - Reduced size */
