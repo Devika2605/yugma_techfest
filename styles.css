@@ -362,30 +362,36 @@ header .container {
     }
 }
 
+
 @media (max-width: 576px) {
-    .logo {
-        justify-content: space-evenly;
-        gap: 8px;
+  .logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-left: -15px;
+  }
+  .logo-jnnce {
+        height: 100%;
     }
-    .logo-ieee {
-        height: 25px;
-    }
-    .logo-jnnce {
-        height: 38px;
-    }
-    .logo-nes {
-        height: 35px;
-    }
-    .logo-fourth {
-        height: 30px;
-    }
-    .logo-fifth {
-        height: 32px;
-    }
-    .logo a img {
-    max-height: 24px;
+  
+  .logo a {
+    flex: 8 0 30%; /* roughly 3 logos per row */
+    text-align: center;
+  }
+
+  .logo a:nth-child(n+4) {
+    margin-top: -15px;
+     /* space between rows */
+  }
+
+  .logo a img {
+    max-width: 150%;
+    height: auto;
   }
 }
+
 .desktop-nav ul {
     display: flex;
     list-style: none;
@@ -427,10 +433,12 @@ header .container {
     font-size: 1.5rem;
     cursor: pointer;
     transition: var(--transition);
+    
 }
 
 .mobile-menu-btn:hover {
     color: var(--primary-color);
+    margin-right: -100px;
 }
 
 .mobile-nav {
@@ -443,10 +451,12 @@ header .container {
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     z-index: 1001;
     transition: var(--transition);
+    margin-right: auto;
 }
 
 .mobile-nav.active {
     right: 0;
+    margin-right: -100px;
 }
 
 .mobile-nav-close {
@@ -455,20 +465,25 @@ header .container {
     font-size: 1.5rem;
     cursor: pointer;
     transition: var(--transition);
+    margin-right: -100px;
 }
 
 .mobile-nav-close:hover {
     color: var(--primary-color);
+    margin-right: -100px;
 }
 
 .mobile-nav ul {
     list-style: none;
     padding: 0 30px;
+    margin-right: -100px;
+
 }
 
 .mobile-nav ul li {
     margin-bottom: 20px;
     margin-left: 1px;
+    margin-right: -100px;
 }
 
 .mobile-nav ul li a {
@@ -479,11 +494,13 @@ header .container {
     display: block;
     padding: 10px 0;
     border-bottom: 1px solid #eee;
+    margin-right: -100px;
 }
 
 .mobile-nav ul li a:hover {
     color: var(--primary-color);
     padding-left: 10px;
+    margin-right: -100px;
 }
 
 
@@ -1892,4 +1909,9 @@ header {
     .team-group-title {
         font-size: 0.9rem;
     }
+}
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
