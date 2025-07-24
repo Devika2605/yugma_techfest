@@ -488,7 +488,7 @@ header .container {
 
 .mobile-menu-btn:hover {
     color: var(--primary-color);
-    margin-right: -100px;
+    
 }
 
 .mobile-nav {
