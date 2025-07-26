@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - YUGMA TECHFEST 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Team Page Specific Styles */
+        .team-page-header {
+            text-align: center;
+            padding: 80px 0 40px;
+            position: relative;
+        }
+
+        .team-page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-page-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+        }
+
+        .team-category {
+            margin-bottom: 60px;
+        }
+
+        .team-category h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #fff;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .team-category h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 3px;
+        }
+
+        /* Compact Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 15px;
+            padding: 0 15px;
+        }
+
+        .team-member-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .team-member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .member-image-container {
+            position: relative;
+            width: 100%;
+            height: 140px;
+            overflow: hidden;
+        }
+
+        .member-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .team-member-card:hover .member-image-container img {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: 12px;
+            text-align: center;
+        }
+
+        .member-info h3 {
+            margin-bottom: 4px;
+            color: #fff;
+            font-size: 0.95rem;
+            line-height: 1.3;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .member-social a {
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+        }
+
+        .member-social a:hover {
+            transform: translateY(-2px) scale(1.1);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* LinkedIn Specific Styles */
+        .member-social a[aria-label="LinkedIn"] {
+            background: rgba(0, 119, 181, 0.3);
+        }
+
+        .member-social a[aria-label="LinkedIn"]:hover {
+            background: #0077b5;
+            box-shadow: 0 3px 8px rgba(0, 119, 181, 0.4);
+        }
+
+        .team-section-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+            margin: 50px 0;
+        }
+
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 12px;
+            }
+
+            .member-image-container {
+                height: 130px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 10px;
+            }
+
+            .team-page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .member-image-container {
+                height: 110px;
+            }
+
+            .member-info h3 {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="page-background"></div>
+    <div class="cursor"></div>
+    <div id="particles-js"></div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="pictures/jnnce logo.png" alt="IEEE Logo" class="logo-ieee"></a>
+                <a href="index.html"><img src="pictures/iee logo.png" alt="JNNCE Logo" class="logo-jnnce"></a>
+                <a href="index.html"><img src="pictures/nes logo.png" alt="NES Logo" class="logo-nes"></a>
+                <a href="index.html"><img src="pictures/ieee.jpg" alt="Fourth Logo" class="logo-fourth"></a>
+                <a href="index.html"><img src="pictures/computer.jpg" alt="Fifth Logo" class="logo-fifth"></a>
+            </div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="hackathon.html">Hackathon</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="index.html#timeline">Timeline</a></li>
+                    <li><a href="index.html#faq">FAQ's</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="hackathon.html">Hackathon</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="index.html#timeline">Timeline</a></li>
+            <li><a href="index.html#faq">FAQ's</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="team-bg-wrapper">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Our Team</h2>
+
+                <!-- Leadership Sections -->
+                <div class="dual-columns">
+                    <div class="team-group">
+                        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">PATRONS</p>
+                        <div class="team-grid-1x">
+                            <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                                <div class="member-image">
+                                    <img src="pictures/princi.jpg" alt="Principal">
+                                </div>
+                                <h3>Dr. Y Vijaya Kumar</h3>
+                                <p>Principal</p>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/dr-y-vijaya-kumar-1010471b3/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+                                <div class="member-image">
+                                    <img src="pictures/dean.jpg" alt="Dean">
+                                </div>
+                                <h3>Dr. S V Sathyanarayana</h3>
+                                <p>Professor & Dean (R&D)</p>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/dr-sathyanarayana-s-v-41307023/"
+                                        target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-group">
+                         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+  PROGRAM CHAIR<span class="title-gap"></span>ORGANIZING CHAIR
+</p>
+                        <div class="team-grid-1x">
+                            <div class="team-member" data-aos="fade-up" data-aos-delay="400">
+                                <div class="member-image">
+                                    <img src="pictures/raghavendra jungade.jpg" alt="Chair">
+                                </div>
+                                <h3>Dr. Raghavendra R. J</h3>
+                                <p>Assoc. Prof & HoD, ISE</p>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/dr-raghavendra-jingade-91a38620a/"
+                                        target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <div class="team-member" data-aos="fade-up" data-aos-delay="500">
+                                <div class="member-image">
+                                    <img src="pictures/pavan kumar.jpg" alt="Pavan">
+                                </div>
+                                <h3>Dr. Pavan Kumar M P</h3>
+                                <p>Assoc. Prof, ISE Dept</p>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/dr-pavan-kumar-mp-160323155/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Organizing Committee -->
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">ORGANIZING COMMITTEE</p>
+                <div class="team-grid-4x">
+                    <div class="team-member" data-aos="fade-up" data-aos-delay="600">
+                        <div class="member-image">
+                            <img src="pictures/sudeep manohar.jpg" alt="Sudeep">
+                        </div>
+                        <h3>Mr. Sudeep Manohar</h3>
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/sudeep-manohar-2b0025169/" target="_blank"
+                                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member" data-aos="fade-up" data-aos-delay="600">
+                        <div class="member-image">
+                            <img src="pictures/arun kumar.jpg" alt="Arun">
+                        </div>
+                        <h3>Mr. Arun Kumar</h3>
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/arun-kumar-p-71578733/" target="_blank"
+                                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member" data-aos="fade-up" data-aos-delay="700">
+                        <div class="member-image">
+                            <img src="pictures/manasa.jpg" alt="Manasa">
+                        </div>
+                        <h3>Mrs. Manasa S M</h3>
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/manasa93/" target="_blank" aria-label="LinkedIn"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member" data-aos="fade-up" data-aos-delay="600">
+                        <div class="member-image">
+                            <img src="pictures/manisha.jpg" alt="Monisha">
+                        </div>
+                        <h3>Mrs. Manisha K M</h3>
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/manisha-km-5647436b/" target="_blank"
+                                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Coordinators -->
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">STUDENT COORDINATORS</p>
+                <div class="team-grid-4x">
+                    <div class="team-member" data-aos="fade-up" data-aos-delay="600">
+                        <div class="member-image">
+                            <img src="pictures/veeresh.jpg" alt="Viresha">
+                        </div>
+                        <h3>Viresha H T</h3>
+                        <p>Chair<br>IEEE Computer Society Student Chapter</p>
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/viresha-h-t-229861282/" target="_blank"
+                                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member" data-aos="fade-up" data-aos-delay="600">
+                        <div class="member-image">
+                            <img src="pictures/subramanya.jpg" alt="Subramanya">
+                        </div>
+                        <h3>Subramanya Gujjar</h3>
+                        <p>Vice Chair<br>IEEE Computer Society Student Chapter</p>
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/subramanya-s-gujjar-6776aa260/" target="_blank"
+                                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member" data-aos="fade-up" data-aos-delay="600">
+                        <div class="member-image">
+                            <img src="pictures/shruthi.jpg" alt="Shruthi">
+                        </div>
+                        <h3>Shruthi Hiremath</h3>
+                        <p>Secretary<br>IEEE Computer Society Student Chapter</p>
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/shruthi-hiremath-b969ba268/" target="_blank"
+                                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member" data-aos="fade-up" data-aos-delay="700">
+                        <div class="member-image">
+                            <img src="pictures/vikyath.jpg" alt="Vikyath">
+                        </div>
+                        <h3>Vikyath M A</h3>
+                        <p>Treasurer<br>IEEE Computer Society Student Chapter</p>
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/vikyath-m-a-522796343" target="_blank"
+                                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Execution Team -->
+                <div class="team-special-row">
+                    <div class="team-coordinators">
+                        <div class="team-group-title">EXECUTION TEAM</div>
+                        <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-image">
+                                <img src="pictures/tarun.jpg" alt="Tarun">
+                            </div>
+                            <h3>Tarun D R</h3>
+                            <p>Member <br>IEEE Student Branch</p>
+                            <div class="member-social">
+                                <a href="https://www.linkedin.com/in/tarun-dasarahatti-raghavendra-2b1bb2252/"
+                                    target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member-image">
+                                <img src="pictures/vaibhav.jpg" alt="Vaibhav">
+                            </div>
+                            <h3>Vaibhav Rao B N</h3>
+                            <p>Member <br>IEEE Student Branch</p>
+                            <div class="member-social">
+                                <a href="https://www.linkedin.com/in/vaibhav-rao-b-n-206225293/" target="_blank"
+                                    aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+                            <div class="member-image">
+                                <img src="pictures/yuvraj.jpg" alt="Yuvaraj">
+                            </div>
+                            <h3>Yuvaraj M R</h3>
+                            <p>Member <br>IEEE Student Branch</p>
+                            <div class="member-social">
+                                <a href="https://www.linkedin.com/in/yuvaraj-m-r-11b73b354/" target="_blank"
+                                    aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-divider"></div>
+
+                    <div class="team-execution">
+                        <div class="team-group-title">WEBSITE MANAGEMENT</div>
+                        <div class="team-member" data-aos="fade-up" data-aos-delay="500">
+                            <div class="member-image">
+                                <img src="pictures/shreya.jpg" alt="Shreya">
+                            </div>
+                            <h3>Shreya R <br>Chittaragi</h3>
+                            <p>student coordinator</p>
+                            <div class="member-social">
+                                <a href="https://www.linkedin.com/in/shreya-r-chittaragi-b1b28b353/" target="_blank"
+                                    aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-member" data-aos="fade-up" data-aos-delay="700">
+                            <div class="member-image">
+                                <img src="pictures/devika.jpg" alt="Devika">
+                            </div>
+                            <h3>Devika N D</h3>
+                            <p>Student coordinator</p>
+                            <div class="member-social">
+                                <a href="https://www.linkedin.com/in/devikand/" target="_blank" aria-label="LinkedIn"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Members Section with Compact Cards -->
+                <div class="team-category">
+                    <h2>TEAM MEMBERS</h2>
+                    <div class="team-grid">
+                        <!-- Member 1 -->
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-image-container">
+                                <img src="pictures/Anusha .jpg" alt="Anusha U S">
+                            </div>
+                            <div class="member-info">
+                                <h3>Anusha U S</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/anusha-u-s-a1460a298/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Member 2 -->
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="member-image-container">
+                                <img src="pictures/Vaishnavi S V.jpg" alt="Vaishnavi S V">
+                            </div>
+                            <div class="member-info">
+                                <h3>Vaishnavi S V</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/vaishnavi-s-v-6139892a6/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Member 3 -->
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member-image-container">
+                                <img src="pictures/Ankitha G .JPG" alt="Ankitha G">
+                            </div>
+                            <div class="member-info">
+                                <h3>Ankitha G</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/ankitha-g-051b18315/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Member 4 -->
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="member-image-container">
+                                <img src="pictures/Amrutha DM.jpg" alt="Amrutha K M">
+                            </div>
+                            <div class="member-info">
+                                <h3>Amrutha K M</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/amrutha-gowda-54472a315/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Member 5 -->
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-image-container">
+                                <img src="pictures/KOUNTHEYA SATHISH.jpg" alt="Kountheya S Sathish">
+                            </div>
+                            <div class="member-info">
+                                <h3>Kountheya S Sathish</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/kountheya/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Member 6 -->
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="member-image-container">
+                                <img src="pictures/Sindhu.jpeg" alt="Sindhu V B">
+                            </div>
+                            <div class="member-info">
+                                <h3>Sindhu V B</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/sindhubhatv/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Member 7 -->
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member-image-container">
+                                <img src="pictures/Siri Ck.jpg" alt="Siri CK">
+                            </div>
+                            <div class="member-info">
+                                <h3>Siri CK</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/siri-ck-a999b0328/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Member 8 -->
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="member-image-container">
+                                <img src="pictures/Chetan Kumar.jpg" alt="Chethan kumar v">
+                            </div>
+                            <div class="member-info">
+                                <h3>Chethan kumar v</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/chethan-kumar-v-5674002a0/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-image-container">
+                                <img src="pictures/Apeksha.jpg" alt="Apeksha KA">
+                            </div>
+                            <div class="member-info">
+                                <h3>Apeksha KA</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/apeksha-ka-23ab68358/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="member-image-container">
+                                <img src="pictures/soujanya mu2.jpg" alt="Sowjanya MU">
+                            </div>
+                            <div class="member-info">
+                                <h3>Sowjanya MU</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/sowjanya-mu-3842aa33a/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member-image-container">
+                                <img src="pictures/Tilak S.jpg" alt="TILAK S">
+                            </div>
+                            <div class="member-info">
+                                <h3>TILAK S</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/tilak-s-4b2940280/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Member 12 -->
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="member-image-container">
+                                <img src="pictures/manu m.jpg" alt="Manu M">
+                            </div>
+                            <div class="member-info">
+                                <h3>Manu M</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/manu-m-a1b659359/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-image-container">
+                                <img src="pictures/Abhitha.jpg" alt="Abhitha B.S">
+                            </div>
+                            <div class="member-info">
+                                <h3>Abhitha B.S</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/abhitha-b-s-388506316/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="member-image-container">
+                                <img src="pictures/Sushma.jpeg" alt="Sushma">
+                            </div>
+                            <div class="member-info">
+                                <h3>Sushma</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/sushma-278015261/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member-image-container">
+                                <img src="pictures/amrutha .jpg" alt="Amrutha H">
+                            </div>
+                            <div class="member-info">
+                                <h3>Amrutha H</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/amrutha-h-naik-054074262/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="member-image-container">
+                                <img src="pictures/Abhilash.jpg" alt="Abhilash R">
+                            </div>
+                            <div class="member-info">
+                                <h3>Abhilash R</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/abhilash-ravikumar-b89774304/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-image-container">
+                                <img src="pictures/Preetham P.jpg" alt="Preetham P">
+                            </div>
+                            <div class="member-info">
+                                <h3>Preetham P</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/preetham-p-b20372359/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="member-image-container">
+                                <img src="pictures/Tarun S.jpg" alt="Tarun S">
+                            </div>
+                            <div class="member-info">
+                                <h3>Tarun S</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/tarun-s-18379a247/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member-image-container">
+                                <img src="pictures/mukesh.jpg" alt="Mukesh V Naik">
+                            </div>
+                            <div class="member-info">
+                                <h3>Mukesh V Naik</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/mukesh-v-naik-a866282a9/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="member-image-container">
+                                <img src="pictures/Nagapriya.jpg" alt="Nagapriya K S">
+                            </div>
+                            <div class="member-info">
+                                <h3>Nagapriya K S</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/priya-rao-92480730b/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-image-container">
+                                <img src="pictures/ananya TY.jpg" alt="Ananya T Y">
+                            </div>
+                            <div class="member-info">
+                                <h3>Ananya T Y</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/ananya-t-y-gowda-225a5a257/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="member-image-container">
+                                <img src="pictures/Shreyas.jpg" alt="Shreyas R">
+                            </div>
+                            <div class="member-info">
+                                <h3>Shreyas R</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/shreyas-r-24bb57340/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member-image-container">
+                                <img src="pictures/anushree.jpg" alt="Anushree.D.M">
+                            </div>
+                            <div class="member-info">
+                                <h3>Anushree.D.M</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/anu-shree-557aba260/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="member-image-container">
+                                <img src="pictures/Sanjay.jpg" alt="Sanjay M">
+                            </div>
+                            <div class="member-info">
+                                <h3>Sanjay M</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/sanjay-m-19a513355" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-image-container">
+                                <img src="pictures/manvitha 2.jpg" alt="Manvitha N Rao">
+                            </div>
+                            <div class="member-info">
+                                <h3>Manvitha N Rao</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/manvitha-n-rao-6b15172b2/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="member-image-container">
+                                <img src="pictures/vidatri 2.jpg" alt="Vidhathri Udupa T G">
+                            </div>
+                            <div class="member-info">
+                                <h3>Vidhathri Udupa T G</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/vidhathri-udupa-312869265/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member-image-container">
+                                <img src="pictures/sneha b2.jpg" alt="Sneha B">
+                            </div>
+                            <div class="member-info">
+                                <h3>Sneha B</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/sneha-b-49857932b/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="member-image-container">
+                                <img src="pictures/spoorthi b2.jpg" alt="Spoorthi B">
+                            </div>
+                            <div class="member-info">
+                                <h3>Spoorthi B</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/spoorthi-b-b6257932b/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-image-container">
+                                <img src="pictures/Bhoomika D2.jpg" alt="Bhoomika D">
+                            </div>
+                            <div class="member-info">
+                                <h3>Bhoomika D</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/bhoomika-rao-16311826a/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="member-image-container">
+                                <img src="pictures/DhanyaR.jpg" alt="Dhanya R">
+                            </div>
+                            <div class="member-info">
+                                <h3>Dhanya R</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/dhanya-r-216b58307/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member-image-container">
+                                <img src="pictures/chitra2.jpg" alt="Chaithra R">
+                            </div>
+                            <div class="member-info">
+                                <h3>Chaithra R</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/chaithra-r-245b35337/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="member-image-container">
+                                <img src="pictures/SahanaNaik.jpg" alt="Sahana Chandrakant Naik">
+                            </div>
+                            <div class="member-info">
+                                <h3>Sahana Chandrakant Naik</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/sahana-naik-b0b9592a4/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-image-container">
+                                <img src="pictures/Yashaswini - Yashaswini Yashu.jpg" alt="Yashaswini B M">
+                            </div>
+                            <div class="member-info">
+                                <h3>Yashaswini B M</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/yashaswini-bm-aaa42a314/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="member-image-container">
+                                <img src="pictures/bhoomika md2.jpg" alt="Bhoomika MD">
+                            </div>
+                            <div class="member-info">
+                                <h3>Bhoomika MD</h3>
+                                <div class="member-social">
+                                    <a href="" target="_blank" aria-label="LinkedIn"><i
+                                            class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member-image-container">
+                                <img src="pictures/SathwikMC.png" alt="Sathwik M C">
+                            </div>
+                            <div class="member-info">
+                                <h3>Sathwik M C</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/sathwik-m-c-46556b359/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="member-image-container">
+                                <img src="pictures/purvikasrao.jpeg" alt="Purvika S Rao">
+                            </div>
+                            <div class="member-info">
+                                <h3>Purvika S Rao</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/purvika-s-rao-/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-image-container">
+                                <img src="pictures/CHANDrashekhar.jpg" alt="ChandraShekhar R">
+                            </div>
+                            <div class="member-info">
+                                <h3>ChandraShekhar R</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/chandra-shekar6366189346/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="member-image-container">
+                                <img src="pictures/megraj.jpg" alt="Megharaj S">
+                            </div>
+                            <div class="member-info">
+                                <h3>Megharaj S</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/megharaj-shet-774119317/" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="member-image-container">
+                                <img src="pictures/chinmayeeps.png" alt="Megharaj S">
+                            </div>
+                            <div class="member-info">
+                                <h3>Chinamai P S</h3>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/chinmai-ps-3a26a031a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"
+                                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
+                    <h3>YUGMA TECHFEST 2025</h3>
+                    <p>A 3-day celebration of technology, innovation, and creativity – packed with thrilling
+                        competitions, cutting-edge tech events, and a 24-hour State-Level Hackathon.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/ise.ieeejnnce/"><i class="fab fa-instagram"></i></a>
+                        <a href="linkedin.com/in/ise-ieee-jnnce-ieee-b80733376"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@ISEIEEEJNNCE"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="hackathon.html">Hackathon</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="index.html#timeline">Timeline</a></li>
+                        <li><a href="index.html#faq">FAQ's</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Code of Conduct</a></li>
+                        <li><a href="#">Submission Rules</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on Events and events.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Yugma Tech Fest. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // Initialize AOS for team page
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Back to top button
+            const backToTopBtn = document.getElementById('backToTop');
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('active');
+                } else {
+                    backToTopBtn.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
